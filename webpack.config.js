@@ -1,15 +1,21 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: "./src/app.js",
+    entry: {
+        app: "./src/app.js"
+    },
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js"
+        path: path.resolve(__dirname, "./dist"),
+        filename: "[name].js"
     },
     mode: 'production',
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: "./src/assets/pug/index.pug"
@@ -72,15 +78,23 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
+                    "style-loader",
+                    MiniCssExtractPlugin.loader,
                     {
-                        loader: "style-loader" // creates style nodes from JS strings
+                        loader: "css-loader", // translates CSS into CommonJS
+                        options: { sourceMap: true }
                     },
                     {
-                        loader: "css-loader" // translates CSS into CommonJS
-                    },
-                    {
-                        loader: "sass-loader" // compiles Sass to CSS
+                        loader: "sass-loader", // compiles Sass to CSS
+                        options: { sourceMap: true }
                     }
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader"
                 ]
             }
         ]
