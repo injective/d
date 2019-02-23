@@ -1,0 +1,41 @@
+header.header
+    a(href='#').logo
+        span.logo__img
+        span.logo__caption
+            span.logo__caption--regular EXTRA
+            span.logo__caption--bold ORDINARY
+
+
+    nav.header-menu
+        div.header-menu__item.header-menu__item--dropdown
+            span.header-menu__text share
+            div.header-menu__drop
+                a(href='#').header-item__drop-item
+                    span.header-item__drop-item-icon.header-item__drop-item-icon--fb
+                        svg(width='2rem', height='2rem')
+                            use(xlink:href="#ic_facebook")
+                    span.header-item__drop-item-caption facebook
+                a(href='#').header-item__drop-item
+                    span.header-item__drop-item-icon.header-item__drop-item-icon--tw
+                        svg(width='2rem', height='2rem')
+                            use(xlink:href="#ic_twitter")
+                    span.header-item__drop-item-caption twitter
+                a(href='#').header-item__drop-item
+                    span.header-item__drop-item-icon.header-item__drop-item-icon--gp
+                        svg(width='2rem', height='2rem')
+                            use(xlink:href="#ic_googleplus")
+                    span.header-item__drop-item-caption google+
+                a(href='#').header-item__drop-item
+                    span.header-item__drop-item-icon.header-item__drop-item-icon--pin
+                        svg(width='2rem', height='2rem')
+                            use(xlink:href="#ic_pinterest")
+                    span.header-item__drop-item-caption pinterest
+
+        a(href='#').header-menu__item.header-menu__item--search
+            svg(width='2rem', height='2rem')
+                use(xlink:href="#ic_search")
+        a(href='#').header-menu__item.header-menu__item--user
+            svg(width='2rem', height='2rem')
+                use(xlink:href="#ic_user")
+
+
