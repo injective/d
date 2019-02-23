@@ -12,9 +12,12 @@ html(lang='en')
                 .container
                     .news-details-section
                         .news-details__navigation
-                            a(href='#').news-details__navigation-btn.news-details__navigation-close
-                            a(href='#').news-details__navigation-btn.news-details__navigation-prev
-                            a(href='#').news-details__navigation-btn.news-details__navigation-next
+                            a(href='#').news-details__navigation-btn
+                                span.news-details__navigation-close
+                            a(href='#').news-details__navigation-btn
+                                span.news-details__navigation-prev
+                            a(href='#').news-details__navigation-btn
+                                span.news-details__navigation-next
                         include includes/news-details
 
         include includes/left-fixed-menu

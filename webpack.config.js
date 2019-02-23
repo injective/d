@@ -12,6 +12,9 @@ module.exports = {
         filename: "[name].js"
     },
     mode: 'production',
+    performance: {
+        hints: false
+    },
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].css",
@@ -83,6 +86,10 @@ module.exports = {
                     {
                         loader: "css-loader", // translates CSS into CommonJS
                         options: { sourceMap: true }
+                    },
+                    {
+                        loader: "postcss-loader", // compiles Sass to CSS
+                        options: { sourceMap: true, config: { path: 'src/assets/js/postcss.config.js' } }
                     },
                     {
                         loader: "sass-loader", // compiles Sass to CSS
